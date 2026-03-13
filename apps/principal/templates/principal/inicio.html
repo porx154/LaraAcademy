@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+
+{% block base_title %}
+    {{datos_empresa.nombre_corto_empresa}}
+{% endblock base_title %}
+
+{% block base_title_icon %}
+    {{datos_empresa.nombre_empresa.upper}}
+{% endblock base_title_icon %}
+
+{% block base_title_portada %}
+    {{datos_empresa.texto_portada}} <span style="color: #00d68f;">{{datos_empresa.nombre_empresa}}</span>
+{% endblock base_title_portada %}
+
+{% block base_texto_portada %}
+    {{datos_empresa.descripcion_portada}}
+{% endblock base_texto_portada %}
+
+{% block base_menu %}
+{% for menu_lara in menu %}
+    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#{{menu_lara.seccion_menu}}">{{menu_lara.nombre_menu}}</a></li>
+{% endfor %}
+                    <!--<li class="nav-item"><a class="nav-link text-dark fw-medium" href="#about-section">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#courses-section">Cursos</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#community-section">Comunidad</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#contact-section">Contacto</a></li>-->
+{% endblock base_menu %}
+
+{% block base_contenido_menu %}
+<div id="{{menu.1.seccion_menu}}" class="py-5 mt-5">
+    <h2 class="display-5 fw-bold mb-5">{{menu.1.titulo_menu}}</h2>
+    <div class="g-4 row">
+        {% for datos_curso in cursos %}
+            <div class="col-md-4">
+                <div class="h-100 border-0 shadow-sm card">
+                    <div class="h-100 border-0 shadow-sm overflow-hidden card">
+                        <div class="position-relative" style="height: 200px;">
+                            <img alt="Introducción a la LSE" class="w-100 h-100 object-fit-cover" referrerpolicy="no-referrer" src="{{datos_curso.link_portada}}">
+                        </div>
+                        <div class="d-flex flex-column card-body">
+                            <div class="fw-bold card-title h5">
+                                {{datos_curso.titulo_curso}}
+                            </div>
+                            <p class="text-muted small card-text">{{datos_curso.descripcion_curso}}</p>
+                            <div class="mt-auto">
+                                    <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#{{datos_curso.cdmodal}}">Saber más</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-md-4">
+                <div class="h-100 border-0 shadow-sm card">
+                    <div class="d-flex flex-column card-body">
+                        <h5 class="fw-bold card-title h5">En Mantenimiento</h5>
+                        <p class="text-muted small card-text">Aun no tenemos cursos disponibles....</p>
+                        
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+       
+    
+</div>
+
+<div id="{{menu.0.seccion_menu}}" class="py-5 mt-5">
+    <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+            <img src="{{menu.0.contenido_link}}" alt="menu.0.titulo_menu" class="img-fluid rounded-4 shadow">
+        </div>
+        <div class="col-lg-6 text-start">
+            <h2 class="display-5 fw-bold mb-4">Sobre Lara</h2>
+            <p class="lead text-muted mb-4">
+                {{menu.0.contenido_menu}}
+            </p>
+          
+            <a target="_blank" href="{{datos_empresa.link_instagram}}" class="btn btn-outline-primary">Conoce a nuestro equipo</a>
+        </div>
+    </div>
+</div>
+<!--menu nuestra comunidad-->
+<div id="{{menu.2.seccion_menu}}" class="py-5 mt-5 bg-white rounded-5 px-4 shadow-sm">
+    <h2 class="display-5 fw-bold mb-5">{{menu.2.titulo_menu}}</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="text-center">
+                <h3 class="display-4 fw-bold text-primary mb-2">5k+</h3>
+                <p class="text-muted">Estudiantes Activos</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="text-center">
+                <h3 class="display-4 fw-bold text-primary mb-2">50+</h3>
+                <p class="text-muted">Docentes Expertos</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="text-center">
+                <h3 class="display-4 fw-bold text-primary mb-2">100%</h3>
+                <p class="text-muted">Pasión por la Inclusión</p>
+            </div>
+        </div>
+    </div>
+    <div class="mt-5 text-center">
+        <p class="lead text-muted mb-4">{{menu.2.contenido_menu}}</p>
+        <a target="_blank" href="{{datos_empresa.link_comunidad}}" class="btn btn-primary btn-lg">Unirse a la Comunidad</a>
+    </div>
+</div>
+
+<div id="{{menu.3.seccion_menu}}" class="py-5 mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <h2 class="display-5 fw-bold mb-4">{{menu.3.titulo_menu}}</h2>
+            <p class="text-muted mb-5">{{menu.3.contenido_menu}}</p>
+            <form class="text-start" method="POST" action="{% url 'Lara' %}">
+                {% csrf_token %}
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="small fw-bold mb-1">Nombre</label>
+                            <input type="text" name="nombre_remite" class="form-control" placeholder="Tu nombre">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="small fw-bold mb-1">Email</label>
+                            <input type="email" name="email_remite" class="form-control" placeholder="tu@email.com">
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="small fw-bold mb-1">Mensaje</label>
+                    <textarea class="form-control" name="contenido_remite" rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 py-3 fw-bold">Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock base_contenido_menu %}
+
+{% block base_modal_curso %}
+{% for curso in cursos %}
+<div class="modal fade" id="{{curso.cdmodal}}" tabindex="-1" aria-labelledby="coursePreviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header border-0 pb-0">
+                <h3 class="modal-title fw-bold" id="coursePreviewModalLabel">{{curso.titulo_curso}}</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <img src="{{curso.link_portada}}" alt="LSE Básico" class="img-fluid rounded-4 shadow-sm">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="mb-4">
+                            <h5 class="fw-bold text-primary mb-3">Sobre este curso</h5>
+                            <p class="text-muted lead" style="font-size: 1rem;">{{curso.objetivo_curso}}</p>
+                        </div>
+                        <div class="d-grid gap-3">
+                            <div class="d-flex align-items-center gap-3 p-3 bg-light rounded-3">
+                                <div class="text-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="9" cy="7" r="4"/>
+                                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="mb-0 small fw-bold">Docente</p>
+                                    {% for docente in asignacion %}
+                                        {% if docente.curso_id == curso.id %}
+                                            <p class="mb-0 small text-muted">{{docente.user.first_name}}</p>
+                                        {% endif %}
+                                    {% endfor %}
+                                    
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 p-3 bg-light rounded-3">
+                                <div class="text-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                                </div>
+                                <div>
+                                    <p class="mb-0 small fw-bold">Fecha de Inicio</p>
+                                    <p class="mb-0 small text-muted">{{curso.fecha_inicio|date:"d/m/Y"}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-0 p-4">
+                <button type="button" class="btn btn-light fw-bold px-4" data-bs-dismiss="modal">Cerrar</button>
+                <!--<a href="register.html" class="btn btn-primary fw-bold px-4">Matricularme ahora</a>-->
+            </div>
+        </div>
+    </div>
+</div> 
+{% endfor %}
+   
+{% endblock base_modal_curso %}
+    
