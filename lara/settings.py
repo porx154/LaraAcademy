@@ -124,7 +124,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 AUTH_USER_MODEL = 'user.User'
-#BACKEND CORREOS
+#BACKEND CORREOS LARA
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 EMAIL_HOST = 'smtp.gmail.com'
