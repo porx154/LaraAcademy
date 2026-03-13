@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lara - Academia de Lengua de Señas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html" style="color: #00d68f;">
+                <div class="p-2 rounded-3 d-flex align-items-center justify-content-center" style="background-color: #00d68f;">
+                    <i data-lucide="hand-metal" class="text-white"></i>
+                </div>
+                <span style="letter-spacing: -0.02em; font-size: 1.5rem;">LARA</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto align-items-center gap-3">
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#about-section">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#courses-section">Cursos</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#community-section">Comunidad</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#contact-section">Contacto</a></li>
+                </ul>
+                <div class="navbar-nav ms-auto align-items-center gap-3">
+                    <a class="btn btn-link text-decoration-none text-dark" href="login.html">Iniciar Sesión</a>
+                    <a class="btn btn-primary" href="register.html">Registrarse</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container text-center py-5">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8">
+                    <h1 class="display-3 fw-bold mb-4" style="letter-spacing: -0.02em;">
+                        Rompe las barreras con <span style="color: #00d68f;">Lara</span>
+                    </h1>
+                    <p class="lead text-muted mb-5">
+                        Aprende de forma interactiva con expertos. Cursos diseñados para todos los niveles, desde principiantes hasta avanzados.
+                    </p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="register.html" class="btn btn-primary btn-lg px-5 py-3">Comenzar Ahora</a>
+                        <a href="#courses-section" class="btn btn-outline-primary btn-lg px-5 py-3">Ver Cursos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-5">
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="mb-4" style="color: #00d68f;">
+                                <i data-lucide="book-open" size="48"></i>
+                            </div>
+                            <h4 class="card-title fw-bold mb-3">Cursos Estructurados</h4>
+                            <p class="card-text text-muted">Material organizado paso a paso para un aprendizaje efectivo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="mb-4" style="color: #00d68f;">
+                                <i data-lucide="users" size="48"></i>
+                            </div>
+                            <h4 class="card-title fw-bold mb-3">Comunidad Activa</h4>
+                            <p class="card-text text-muted">Interactúa con otros estudiantes y docentes especializados.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="mb-4" style="color: #00d68f;">
+                                <i data-lucide="check-circle" size="48"></i>
+                            </div>
+                            <h4 class="card-title fw-bold mb-3">Certificación</h4>
+                            <p class="card-text text-muted">Obtén un certificado al completar satisfactoriamente tus cursos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="courses-section" class="py-5 mt-5">
+                <h2 class="display-5 fw-bold mb-5">Nuestros Cursos</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Introducción a la LSE</h5>
+                                <p class="card-text text-muted small">Aprende los fundamentos básicos de la Lengua de Señas Española.</p>
+                                <div class="mt-auto">
+                                    <a href="register.html" class="btn btn-primary w-100">Saber más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="about-section" class="py-5 mt-5">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <img src="https://picsum.photos/seed/lara-about/800/600" alt="Sobre Lara" class="img-fluid rounded-4 shadow">
+                    </div>
+                    <div class="col-lg-6 text-start">
+                        <h2 class="display-5 fw-bold mb-4">Sobre Lara</h2>
+                        <p class="lead text-muted mb-4">
+                            Lara nació con la misión de democratizar el acceso al aprendizaje de la Lengua de Señas. Creemos que la comunicación es un derecho fundamental y trabajamos para derribar las barreras que separan a las personas.
+                        </p>
+                        <p class="text-muted mb-4">
+                            Nuestro equipo está compuesto por expertos nativos y pedagogos especializados que han diseñado una metodología única, interactiva y accesible para todos.
+                        </p>
+                        <a href="register.html" class="btn btn-outline-primary">Conoce a nuestro equipo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="community-section" class="py-5 mt-5 bg-white rounded-5 px-4 shadow-sm">
+                <h2 class="display-5 fw-bold mb-5">Nuestra Comunidad</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <h3 class="display-4 fw-bold text-primary mb-2">5k+</h3>
+                            <p class="text-muted">Estudiantes Activos</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <h3 class="display-4 fw-bold text-primary mb-2">50+</h3>
+                            <p class="text-muted">Docentes Expertos</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <h3 class="display-4 fw-bold text-primary mb-2">100%</h3>
+                            <p class="text-muted">Pasión por la Inclusión</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 text-center">
+                    <p class="lead text-muted mb-4">Únete a miles de personas que ya están cambiando el mundo a través de las señas.</p>
+                    <a href="register.html" class="btn btn-primary btn-lg">Unirse a la Comunidad</a>
+                </div>
+            </div>
+
+            <div id="contact-section" class="py-5 mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h2 class="display-5 fw-bold mb-4">Contacto</h2>
+                        <p class="text-muted mb-5">¿Tienes alguna duda o sugerencia? Estamos aquí para escucharte.</p>
+                        <form class="text-start">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="small fw-bold mb-1">Nombre</label>
+                                        <input type="text" class="form-control" placeholder="Tu nombre">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="small fw-bold mb-1">Email</label>
+                                        <input type="email" class="form-control" placeholder="tu@email.com">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="small fw-bold mb-1">Mensaje</label>
+                                <textarea class="form-control" rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-primary w-100 py-3 fw-bold">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-top py-5 mt-5">
+        <div class="container text-center">
+            <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
+                <i data-lucide="hand-metal" style="color: #00d68f;" size="24"></i>
+                <span class="h5 fw-bold mb-0">LARA</span>
+            </div>
+            <p class="text-muted small mb-0">© 2024 Lara - Academia de Lengua de Señas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

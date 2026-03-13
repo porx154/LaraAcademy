@@ -1,0 +1,59 @@
+/* LARA Academy - Global Styles */
+:root {
+  --primary-color: #00d68f;
+  --primary-hover: #00b377;
+  --text-dark: #1a1a1a;
+  --text-muted: #6c757d;
+  --bg-light: #f8f9fa;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  background-color: #fff;
+}
+
+.navbar-brand {
+  color: var(--primary-color) !important;
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.card {
+  border: none;
+  transition: transform 0.2s;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+}
+
+.shadow-sm {
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+.hero-section {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.footer {
+  padding: 50px 0;
+  background-color: var(--bg-light);
+  border-top: 1px solid #eee;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - LARA Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <div class="p-2 rounded-3 bg-success d-inline-flex align-items-center justify-content-center">
+                    <span class="text-white">L</span>
+                </div>
+                <span>LARA</span>
+            </a>
+            <div class="ms-auto">
+                <a href="register.html" class="btn btn-primary px-4">Registrarse</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card p-4 shadow-sm">
+                    <div class="card-body">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold">Bienvenido de nuevo</h2>
+                            <p class="text-muted small">Ingresa tus credenciales para continuar</p>
+                        </div>
+                        <form action="dashboard.html">
+                            <div class="mb-3">
+                                <label class="small fw-bold mb-2">Correo Electrónico</label>
+                                <input type="email" class="form-control" placeholder="tu@email.com" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="small fw-bold mb-2">Contraseña</label>
+                                <input type="password" class="form-control" placeholder="••••••••" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Entrar</button>
+                        </form>
+                        <div class="text-center mt-4">
+                            <a href="register.html" class="btn btn-link btn-sm text-decoration-none">¿No tienes cuenta? Regístrate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-5">
+        <div class="container text-center">
+            <p class="text-muted mb-0">&copy; 2024 LARA Academy. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
