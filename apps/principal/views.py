@@ -27,3 +27,4 @@ def enviar_correo_inicio(nombre_remite,email_remite,contenido_remite,correo_dest
               [correo_destino],
               fail_silently=False
               )
+

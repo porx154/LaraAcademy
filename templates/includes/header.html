@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="{% url 'dashboard:dashboard' %}" style="color: #00d68f;">
+            <div class="p-2 rounded-3 d-flex align-items-center justify-content-center" style="background-color: #00d68f;">
+                <i data-lucide="hand-metal" class="text-white"></i>
+            </div>
+            <span style="letter-spacing: -0.02em; font-size: 1.5rem;">LARA</span>
+        </a>
+        <div class="navbar-nav ms-auto align-items-center gap-3">
+            <span class="badge bg-light text-dark p-2 border rounded-pill">
+                <span class="text-success me-1">●</span> Estudiante:{{request.user.first_name}} 
+            </span>
+            <a href="{% url 'logout' %}" class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2">
+                <i data-lucide="log-out" size="16"></i> Cerrar Sesión
+            </a>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,1 @@
+from .tipousuario import TipoUsuario

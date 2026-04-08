@@ -1,0 +1,116 @@
+{% extends 'basedashboard.html' %}
+
+{% block base_dashboard_conteiner %}
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-5 gap-3">
+    <div>
+        <h2 class="fw-bold d-flex align-items-center gap-2">
+            <i data-lucide="layout-dashboard" style="color: #00d68f;"></i> Panel de Control
+        </h2>
+        <p class="text-muted mb-0">Gestiona tus cursos y actividades</p>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-8">
+        <section class="mb-5">
+            <h3 class="fw-bold h5 mb-4">Mis Cursos Matriculados</h3>
+            <div class="row g-3">
+                
+                {% for mis_cursos in cursos %}
+                <div class="col-sm-6">
+                    <a href="{% url 'curso-detail'%}" class="text-decoration-none text-dark">
+                        <div class="card h-100 border-0 shadow-sm cursor-pointer hover-card">
+                            <div class="bg-light d-flex align-items-center justify-content-center py-5 rounded-top">
+                                <i data-lucide="book-open" size="40" class="text-primary opacity-50"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">{{mis_cursos.curso.titulo_curso}}</h5>
+                                <p class="card-text text-muted small text-truncate">{{mis_cursos.curso.descripcion_curso}}</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 small text-muted">
+                                    <span><i data-lucide="calendar" size="12" class="me-1"></i> {{mis_cursos.curso.fecha_inicio|date:"Y-m-d"}}</span>
+                                    <i data-lucide="chevron-right" size="16"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% empty %}
+                <div class="g-3 row">
+                    <div class="col-12">
+                        <div role="alert" class="fade text-center py-5 border-2 border-dashed alert alert-light show">
+                            <p class="text-muted mb-0">Aún no estás matriculado en ningún curso.</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                    
+            </div>
+        </section>
+        <section>
+            <h3 class="fw-bold h5 mb-4">Catálogo de Cursos</h3>
+            <div class="g-3 row">
+                <div class="col-sm-6">
+                    <div class="h-100 border-0 shadow-sm card">
+                        <div class="d-flex flex-column card-body">
+                            <div class="fw-bold card-title h5">Introducción a la LSE</div>
+                            <p class="text-muted small card-text">Aprende los fundamentos básicos de la Lengua de Señas Española. Saludos, abecedario y expresiones comunes.</p>
+                            <p class="small fw-bold text-primary mt-auto">Docente: Profesor Señas</p>
+                            <button type="button" class="w-100 mt-3 btn btn-outline-primary">Matricularme</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="h-100 border-0 shadow-sm card">
+                        <div class="d-flex flex-column card-body">
+                            <div class="fw-bold card-title h5">LSE Nivel Intermedio</div>
+                            <p class="text-muted small card-text">Profundiza en la gramática y vocabulario avanzado. Ideal para quienes ya conocen lo básico.</p>
+                            <p class="small fw-bold text-primary mt-auto">Docente: Profesor Señas</p>
+                            <button type="button" class="w-100 mt-3 btn btn-outline-primary">Matricularme</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="h-100 border-0 shadow-sm card">
+                        <div class="d-flex flex-column card-body">
+                            <div class="fw-bold card-title h5">Cultura Sorda y Comunidad</div>
+                        <p class="text-muted small card-text">Un viaje por la historia, valores y cultura de la comunidad sorda en el mundo.</p>
+                        <p class="small fw-bold text-primary mt-auto">Docente: Admin Academy</p>
+                        <button type="button" class="w-100 mt-3 btn btn-outline-primary">Matricularme</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="card text-white border-0 shadow-sm mb-4" style="background-color: #00d68f;">
+            <div class="card-body p-4">
+                <h3 class="h5 fw-bold mb-3">Próximas Tareas</h3>
+                <p class="small opacity-75 mb-4">No tienes tareas pendientes para esta semana.</p>
+                <button class="btn btn-light w-100 fw-bold" style="color: #00d68f;">Ver Calendario</button>
+            </div>
+        </div>
+        <div class="border-0 shadow-sm card">
+            <div class="p-4 card-body">
+                <h3 class="h5 fw-bold mb-4">Anuncios</h3>
+                <div class="list-group list-group-flush">
+                    <div class="px-0 border-0 mb-3 list-group-item">
+                        <div class="border-start border-4 border-primary ps-3">
+                            <p class="fw-bold mb-0 small">Nueva clase en vivo</p>
+                            <p class="text-muted x-small mb-0">Mañana a las 10:00 AM</p>
+                        </div>
+                    </div>
+                    <div class="px-0 border-0 mb-3 list-group-item">
+                        <div class="border-start border-4 border-primary ps-3">
+                            <p class="fw-bold mb-0 small">Nueva clase en vivo</p>
+                            <p class="text-muted x-small mb-0">Mañana a las 10:00 AM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock base_dashboard_conteiner %}
+    

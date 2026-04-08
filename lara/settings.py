@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.cursodetail',
+    'apps.dashboard',
+    'apps.login',
     'apps.cursos',
     'apps.user',
     'apps.principal',
@@ -133,3 +136,5 @@ EMAIL_USE_TLS = True
 
 EMAIL_HOST_USER = 'taichizero154@gmail.com'
 EMAIL_HOST_PASSWORD = 'syptbpwtxwawehuj'
+#--
+#DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

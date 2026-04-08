@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Lara</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html" style="color: #00d68f;">
+                <div class="p-2 rounded-3 d-flex align-items-center justify-content-center" style="background-color: #00d68f;">
+                    <i data-lucide="hand-metal" class="text-white"></i>
+                </div>
+                <span style="letter-spacing: -0.02em; font-size: 1.5rem;">LARA</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="py-5 d-flex align-items-center" style="min-height: 80vh;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-5 col-lg-4">
+                    <div class="card p-4 shadow">
+                        <div class="card-body text-center">
+                            
+                            {% if mensaje %}
+                                <div class="alert alert-danger" role="alert">
+                                    {{mensaje}}
+                                </div>
+                            {% endif %}
+                                
+                            <h2 class="fw-bold mb-2">Bienvenido de nuevo</h2>
+                            <p class="text-muted small mb-4">Ingresa tus credenciales para continuar</p>
+                            <form action="{% url 'logins' %}" method="POST">
+                                {% csrf_token %}
+                                <div class="mb-3 text-start">
+                                    <label class="small fw-bold mb-1">Correo Electrónico</label>
+                                    <input type="email" name="username" class="form-control" placeholder="tu@email.com" required>
+                                </div>
+                                <div class="mb-4 text-start">
+                                    <label class="small fw-bold mb-1">Contraseña</label>
+                                    <input type="password" name="password" class="form-control" placeholder="••••••••" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Entrar</button>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {{frmlogin}}
+    <script>lucide.createIcons();</script>
+</body>
+</html>

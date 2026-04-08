@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - Lara</title>
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-light">
+    {% include 'includes/header.html' %}
+
+    <main class="py-5">
+        <div class="container">
+            
+            {% block base_dashboard_conteiner %}
+                
+            {% endblock base_dashboard_conteiner %}
+                
+            
+        </div>
+    </main>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
